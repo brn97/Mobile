@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VendedorService } from '../services/vendedor.service';
+import { AuthService } from '../services/auth.service'; // Importando AuthService
 import { Router } from '@angular/router';
 
 @Component({
@@ -20,6 +21,7 @@ export class Tab2Page implements OnInit {
 
   constructor(
     private vendedorService: VendedorService,
+    private authService: AuthService, // Injetando AuthService
     private router: Router
   ) { }
 
@@ -47,10 +49,16 @@ export class Tab2Page implements OnInit {
   onExcluir() {
     this.vendedorService.excluirVendedor().subscribe(response => {
       console.log('Vendedor excluído com sucesso', response);
-      this.router.navigate(['/rota-apos-exclusao']);  // Redirecione conforme necessário
+      this.carregarDadosVendedor();
+      this.router.navigate(['/']);  // Redirecione conforme necessário
     }, error => {
       console.error('Erro ao excluir vendedor', error);
     });
+  }
+
+  logout() {
+    this.authService.logout(); // Chamando o método logout do AuthService
+    this.router.navigate(['/tela-login']); // Redirecionando para a página de login ou outra página conforme necessário
   }
 
   voltarParaPaginaInicial() {

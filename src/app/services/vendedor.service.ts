@@ -24,6 +24,6 @@ export class VendedorService {
   }
 
   excluirVendedor(): Observable<any> {
-    return this.apiService.delete(`${this.Url}excluir/vendedor/`);
+    return this.apiService.delete(`${this.Url}excluir/vendedor`);
   }
 }

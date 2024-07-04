@@ -8,25 +8,28 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) {
-  }
-  private Url = environment.apiUrl
-  login(loginData: { email: string; password: string }): Observable<any>  {
+  private Url = environment.apiUrl;
 
-    return this.http.post(`${this.Url}api/token/`, loginData)
+  constructor(private http: HttpClient) {}
 
+  login(loginData: { email: string; password: string }): Observable<any> {
+    return this.http.post(`${this.Url}api/token/`, loginData);
   }
 
   saveToken(token: string) {
     localStorage.setItem('access_token', token);
   }
 
-  async getToken(): Promise <string | null> {
+  async getToken(): Promise<string | null> {
     return localStorage.getItem('access_token');
   }
 
   isAuthenticated(): boolean {
     const token = this.getToken();
     return token != null;
+  }
+
+  logout() {
+    localStorage.removeItem('access_token');
   }
 }

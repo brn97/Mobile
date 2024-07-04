@@ -23,14 +23,12 @@ export class TelaLoginPage {
 
 
   onLogin() {
-    debugger;
     this.userService.login(this.loginData).subscribe((res: any) => {
-      debugger;
       console.log('Response from API:', res);
       if (res.access) { // Verifique se o token foi retornado
         alert('Login Success');
         this.userService.saveToken(res.access); // Salve o token no LocalStorage
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/tabs/tab2');
       } else {
         this.presentAlert(res.message);
       }
