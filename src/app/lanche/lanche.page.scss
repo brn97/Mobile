@@ -1,12 +1,5 @@
-#voltar {
-  position: fixed;
-  left: 10px;
-  /* Ajuste conforme necessário */
-  color: white;
-  border-radius: 8px;
-  padding: 10px 20px;
-  z-index: 1000;
-
+ion-header {
+  position: relative;
 }
 
 ion-content {
@@ -19,34 +12,57 @@ ion-content {
   justify-content: center;
   align-items: center;
   height: 100%;
+  padding: 40px 20px; /* Espaçamento adicional para garantir que o formulário não fique colado no topo e no fundo */
+  box-sizing: border-box;
+}
 
-  form {
-    margin-top: 2%;
-    margin-left: 20%;
-    border-radius: 8px;
-    max-width: 60%;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    /* Alinha os itens verticalmente */
-    align-items: center;
-  }
+.form-wrapper {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  ion-item {
-    width: 65%;
-    background-color: rgb(255, 255, 255);
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    /* Centraliza horizontalmente */
+form {
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  margin: 20px 20px; /* Ajusta a margem para que o formulário não toque as bordas da tela */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8);
+}
 
-  }
+ion-item {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
 
-  #salvar {
-    width: 50%;
-    align-self: center;
-    /* Centraliza o botão dentro do formulário */
-  }
+#salvar {
+  width: 50%;
+  align-self: center;
+}
+
+.voltar-link {
+  margin-top: 20px;
+  color: #DC143C;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.voltar-link:hover {
+  text-decoration: underline;
 }
 
 ion-button {
@@ -75,12 +91,15 @@ ion-button:active {
 
 @media (max-width: 600px) {
   ion-content {
-    padding: 10px;
+    padding: 20px 10px; /* Ajusta o espaçamento para dispositivos móveis */
+  }
+
+  .form-wrapper {
+    padding: 30px 0; /* Reduz o espaço acima e abaixo do formulário em telas pequenas */
   }
 
   form {
     margin-top: 5%;
-    margin-left: 0;
     max-width: 100%;
     width: 90%;
     padding: 10px;
@@ -98,5 +117,9 @@ ion-button:active {
   ion-button {
     font-size: 16px;
     padding: 8px 16px;
+  }
+
+  .voltar-link {
+    font-size: 14px;
   }
 }

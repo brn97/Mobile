@@ -3,38 +3,39 @@
     <ion-title>Cadastro de Lanche</ion-title>
   </ion-toolbar>
   
-  <div>
-    <ion-button (click)="voltarParaPaginaInicial()" id="voltar">Voltar</ion-button>
-  </div>
+  
 
 </ion-header>
 
 <ion-content>
-  <form (ngSubmit)="onCadastro()" #lancheForm="ngForm">
-    <ion-item>
-      <ion-label position="floating"> Nome </ion-label>
-      <ion-input type="text" [(ngModel)]="nome_produto" name="nome" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Preço</ion-label>
-      <ion-input type="text" [(ngModel)]="preco_produto" name="preco" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Descrição</ion-label>
-      <ion-input type="text"  [(ngModel)]="descricao_produto" name="descricao" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label type="text" position="floating">Categoria</ion-label>
-      <ion-input type="text"  [(ngModel)]="categoria" name="Categoria" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label type="text" position="floating">Status</ion-label>
-      <ion-input type="text"  [(ngModel)]="status_produto" name="Status" required></ion-input>
-    </ion-item>
-    <ion-item >
-      <ion-label  position="floating">Link da Imagem do Lanche</ion-label>
-      <ion-input type="url" [(ngModel)]="imagem" name="imagem" required></ion-input>
-    </ion-item>
-    <ion-button id="salvar" expand="block" type="submit">Cadastrar</ion-button>
-  </form>
+  <div class="form-wrapper">
+    <form (ngSubmit)="onCadastro()" #lancheForm="ngForm">
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="nome_produto" name="nome" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Preço</ion-label>
+        <ion-input type="text" [(ngModel)]="preco_produto" name="preco" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descrição</ion-label>
+        <ion-input type="text" [(ngModel)]="descricao_produto" name="descricao" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Categoria</ion-label>
+        <ion-input type="text" [(ngModel)]="categoria" name="Categoria" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Status</ion-label>
+        <ion-input type="text" [(ngModel)]="status_produto" name="Status" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Link da Imagem do Lanche</ion-label>
+        <ion-input type="url" [(ngModel)]="imagem" name="imagem" required></ion-input>
+      </ion-item>
+      <ion-button id="salvar" expand="block" type="submit">Cadastrar</ion-button>
+      <a (click)="voltarParaPaginaInicial()" class="voltar-link">Voltar para a tela inicial</a>
+    </form>
+  </div>
 </ion-content>
