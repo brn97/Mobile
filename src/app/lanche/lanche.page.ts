@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class LanchePage {
 
     nome_produto: string = '';
-    preco: number = 0;
+    preco_produto: number = 0;
     descricao_produto: string = '';
     categoria: string = '';
     status_produto: string = '';
@@ -26,7 +26,7 @@ export class LanchePage {
   onCadastro() {
     const lanche = {
       nome_produto: this.nome_produto,
-      preco: this.preco,
+      preco_produto: this.preco_produto,
       descricao_produto: this.descricao_produto,
       categoria: this.categoria,
       status_produto: this.status_produto,
