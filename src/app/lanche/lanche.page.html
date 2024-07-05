@@ -10,30 +10,30 @@
 </ion-header>
 
 <ion-content>
-  <form (ngSubmit)="onSubmit()" #lancheForm="ngForm">
+  <form (ngSubmit)="onCadastro()" #lancheForm="ngForm">
     <ion-item>
       <ion-label position="floating"> Nome </ion-label>
-      <ion-input type="text" [(ngModel)]="lanche.nome" name="nome" required></ion-input>
+      <ion-input type="text" [(ngModel)]="nome_produto" name="nome" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Preço</ion-label>
-      <ion-input type="text" [(ngModel)]="lanche.preco" name="preco" required></ion-input>
+      <ion-input type="text" [(ngModel)]="preco" name="preco" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Descrição</ion-label>
-      <ion-input type="text"  [(ngModel)]="lanche.descricao" name="descricao" required></ion-input>
+      <ion-input type="text"  [(ngModel)]="descricao_produto" name="descricao" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label type="text" position="floating">Categoria</ion-label>
-      <ion-input type="text"  [(ngModel)]="lanche.categoria" name="Categoria" required></ion-input>
+      <ion-input type="text"  [(ngModel)]="categoria" name="Categoria" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label type="text" position="floating">Status</ion-label>
-      <ion-input type="text"  [(ngModel)]="lanche.status" name="Status" required></ion-input>
+      <ion-input type="text"  [(ngModel)]="status_produto" name="Status" required></ion-input>
     </ion-item>
     <ion-item >
-      <ion-label class="id_image" >Foto do Lanche</ion-label>
-      <input type="file"  accept="image/*">
+      <ion-label  position="floating">Link da Imagem do Lanche</ion-label>
+      <ion-input type="url" [(ngModel)]="imagem" name="imagem" required></ion-input>
     </ion-item>
     <ion-button id="salvar" expand="block" type="submit">Cadastrar</ion-button>
   </form>

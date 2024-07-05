@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LancheService } from '../services/lanche.service';
 import { Router } from '@angular/router';
 
 
@@ -8,24 +9,41 @@ import { Router } from '@angular/router';
   styleUrls: ['./lanche.page.scss'],
 })
 export class LanchePage {
-  lanche = {
-    nome: '',
-    preco: '',
-    descricao: '',
-    categoria: '',
-    status: '',
-    imagem: null
-  };
 
-  constructor( private router: Router) { }
-  
+    nome_produto: string = '';
+    preco: number = 0;
+    descricao_produto: string = '';
+    categoria: string = '';
+    status_produto: string = '';
+    imagem: string = '';
+
+  constructor( 
+    private router: Router,
+    private lancheService: LancheService,
+  ) { }
 
 
-
-  onSubmit() {
-    console.log('Lanche cadastrado:', this.lanche);
-    // Aqui você pode adicionar a lógica para enviar os dados do formulário para o servidor
+  onCadastro() {
+    const lanche = {
+      nome_produto: this.nome_produto,
+      preco: this.preco,
+      descricao_produto: this.descricao_produto,
+      categoria: this.categoria,
+      status_produto: this.status_produto,
+      foto_produto: this.imagem,
+    }
+    console.log('Dados a serem enviados:', lanche); 
+    this.lancheService.cadastrarLanche(lanche).subscribe(
+      response => {
+        console.log('Lanche cadastrado com sucesso', response);
+        this.router.navigate(['/tabs/tab3']);
+      },
+      error => {
+        console.error('Erro ao cadastrar lanche', error);
+      }
+    );
   }
+
 
   voltarParaPaginaInicial() {
     this.router.navigateByUrl('/');

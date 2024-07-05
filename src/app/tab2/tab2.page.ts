@@ -26,8 +26,12 @@ export class Tab2Page implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.carregarDadosVendedor();
+
   }
+
+  ionViewWillEnter() {
+    this.carregarDadosVendedor();
+  }
 
   carregarDadosVendedor() {
     this.vendedorService.listarVendedor().subscribe(data => {
@@ -49,16 +53,29 @@ export class Tab2Page implements OnInit {
   onExcluir() {
     this.vendedorService.excluirVendedor().subscribe(response => {
       console.log('Vendedor excluído com sucesso', response);
-      this.carregarDadosVendedor();
-      this.router.navigate(['/']);  // Redirecione conforme necessário
+      this.logout();
     }, error => {
       console.error('Erro ao excluir vendedor', error);
     });
   }
 
+  limparCampos() {
+    this.vendedorData = {
+      user: {
+        username: '',
+        email: ''
+      },
+      telefone_vendedor: '',
+      cpf_cnpj_vendedor: '',
+      link_contato: ''
+    };
+    console.log('Campos limpos após logout');
+  }
+
   logout() {
-    this.authService.logout(); // Chamando o método logout do AuthService
-    this.router.navigate(['/tela-login']); // Redirecionando para a página de login ou outra página conforme necessário
+    this.authService.logout();
+    this.limparCampos();  // Limpa os campos ao deslogar
+    this.router.navigate(['/tela-login']);
   }
 
   voltarParaPaginaInicial() {

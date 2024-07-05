@@ -28,7 +28,7 @@ export class TelaLoginPage {
       if (res.access) { // Verifique se o token foi retornado
         alert('Login Success');
         this.userService.saveToken(res.access); // Salve o token no LocalStorage
-        this.router.navigateByUrl('/tabs/tab2');
+        this.router.navigateByUrl('/');
       } else {
         this.presentAlert(res.message);
       }
