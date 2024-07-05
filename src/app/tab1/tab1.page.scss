@@ -79,3 +79,26 @@ ion-button:active {
         padding: 8px 16px;
     }
 }
+
+@media (max-width: 360px) {
+    ion-content {
+        padding: 5px;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    p {
+        font-size: 14px;
+        margin-bottom: 6px;
+        text-align: center;
+    }
+    
+    ion-button {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}
