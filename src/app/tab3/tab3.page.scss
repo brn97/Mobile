@@ -1,98 +1,125 @@
 ion-content {
-    --background: none;
-    background-image: url('../../assets/ComidaRapida.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-  }
-  
-  .content-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-  
-  .lista-lanches {
-    width: 100%;
-    max-width: 600px; /* Define a largura máxima da lista */
-    margin-bottom: 80px; /* Margem inferior para deixar espaço para o botão fixo */
-  }
-  
-  .lanche-item {
-    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-  }
-  
+  --background: none;
+  background-image: url('../../assets/ComidaRapida.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.lista-lanches {
+  width: 100%;
+  max-width: 600px; 
+  margin-bottom: 80px; 
+}
+
+.lanche-item {
+  background-color: rgba(255, 255, 255, 0.8); 
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; 
+}
+
+.lanche-item-thumbnail {
+  width: 100px; 
+  height: 100px; 
+  border-radius: 15px; 
+  overflow: hidden; 
+  margin-right: 15px; 
+  margin-bottom: 10px; 
+}
+
+.lanche-item-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.lanche-item-details {
+  flex: 1; 
+}
+
+.lanche-item h2 {
+  font-size: 18px; 
+  margin-bottom: 10px; 
+  font-weight: bold;
+  color: #333; 
+}
+
+.lanche-item p {
+  font-size: 14px; 
+  color: #666; 
+  margin-bottom: 10px; 
+}
+
+.fixed-button {
+  position: fixed;
+  bottom: 20px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  z-index: 999; 
+  text-align: center; 
+  width: 90%; 
+  max-width: 300px; 
+}
+
+.fixed-button ion-button {
+  --background: #DC143C; 
+  --background-activated: #DC143C;
+  --background-focused: #DC143C;
+  --background-hover: #DC143C;
+  color: white;
+  font-size: 14px; 
+  font-weight: bold;
+  padding: 12px 24px; 
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.fixed-button ion-button:hover {
+  transform: scale(1.05);
+  background-color: #388E3C; 
+}
+
+.fixed-button ion-button:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
   .lanche-item-thumbnail {
-    width: 150px; /* Tamanho da div aumentado */
-    height: 150px; /* Tamanho da div aumentado */
-    border-radius: 15px; /* Bordas arredondadas */
-    overflow: hidden; /* Garante que a imagem não ultrapasse as bordas arredondadas */
+    width: 80px; 
+    height: 80px; 
+    margin-bottom: 5px; 
   }
-  
-  .lanche-item-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Garante que a imagem se ajuste ao tamanho */
-  }
-  
-  .lanche-item-details {
-    flex: 1; /* Ocupa todo o espaço disponível */
-  }
-  
+
   .lanche-item h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #333; /* Cor do título */
+    font-size: 16px; 
+    margin-bottom: 5px; 
   }
-  
+
   .lanche-item p {
-    font-size: 16px;
-    color: #666; /* Cor do texto */
-    margin-bottom: 20px;
+    font-size: 12px; 
+    margin-bottom: 5px; 
   }
-  
+
   .fixed-button {
-    position: fixed;
-    bottom: 50%; /* Centraliza verticalmente */
-    transform: translateY(50%); /* Ajusta para centralizar perfeitamente */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Ajusta para centralizar perfeitamente */
-    z-index: 999; /* Garante que o botão fixo esteja acima de outros conteúdos */
+    width: 100%; 
+    max-width: none; 
   }
-  
-  .fixed-button ion-button {
-    --background: #DC143C; /* Nova cor do botão */
-    --background-activated: #DC143C;
-    --background-focused: #DC143C;
-    --background-hover: #DC143C;
-    color: white;
-    font-size: 14px; /* Tamanho de fonte menor */
-    font-weight: bold;
-    padding: 12px 24px; /* Ajusta o padding do botão para melhorar a acessibilidade */
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .fixed-button ion-button:hover {
-    transform: scale(1.05);
-    background-color: #388E3C; /* Cor de hover do botão */
-  }
-  
-  .fixed-button ion-button:active {
-    transform: scale(0.95);
-  }
-   
+}

@@ -7,8 +7,8 @@ ion-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* 100% da altura da viewport */
-    padding: 0; /* Reduzir o padding para zero para evitar espaçamento extra */
+    height: 100vh; 
+    padding: 0; 
   }
   
   .cadastro-container {
@@ -23,8 +23,8 @@ ion-content {
   }
   
   .cadastro-form {
-    width: 100%;  /* Garante que o formulário ocupe toda a largura do contêiner */
-    max-width: 400px; /* Limita a largura máxima do formulário */
+    width: 100%;  
+    max-width: 400px; 
   }
   
   .cadastro-input {
@@ -91,3 +91,23 @@ ion-content {
     border-radius: 5px;
   }
   
+  @media (max-width: 600px) {
+    ion-content {
+        padding: 10px;
+    }
+
+    .cadastro-container {
+        padding: 15px;
+    }
+
+    .cadastro-form {
+        max-width: 85%;
+    }
+
+    ion-button,
+    #criar\ lanche,
+    #sair {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}

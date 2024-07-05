@@ -72,3 +72,31 @@ ion-button:hover {
 ion-button:active {
   transform: scale(0.95);
 }
+
+@media (max-width: 600px) {
+  ion-content {
+    padding: 10px;
+  }
+
+  form {
+    margin-top: 5%;
+    margin-left: 0;
+    max-width: 100%;
+    width: 90%;
+    padding: 10px;
+  }
+
+  ion-item {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #salvar {
+    width: 80%;
+  }
+
+  ion-button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}

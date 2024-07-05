@@ -67,3 +67,18 @@ ion-button:active {
 .voltar-link:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 600px) {
+  .cadastro-form {
+    padding: 15px;
+  }
+
+  ion-button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .voltar-link {
+    font-size: 14px;
+  }
+}
